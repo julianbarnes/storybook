@@ -1,7 +1,16 @@
-<p>{{stories[currentPage - 1].content}}</p>
-
-<p>Page {{stories[currentPage - 1].page}}</p>
-<button id="nextButton" (click)="onClick()">
-  Next Page
-</button>
+<div class="container pt-5">
+  <div class="row">
+    <button id="prevButton" class="col-1" (click)="onPrev()">
+      Previous Page
+    </button>
+    <div class="col-8">
+      <p>{{stories[currentPage - 1].content}}</p>
+    <p>Page {{stories[currentPage - 1].page}}</p>
+    </div>
+    
+    <button id="nextButton" class="col-1" (click)="onNext()">
+      Next Page
+    </button>
+  </div>  
+</div>
 
