@@ -38,7 +38,6 @@ describe('AppComponent', () => {
     tick();
     fixture.detectChanges()
     let content = (fixture.debugElement.nativeElement as HTMLElement).textContent
-    console.log(content)
     expect(content?.indexOf('Page 2')).toBeGreaterThan(0)
     
   }))
@@ -56,7 +55,6 @@ describe('AppComponent', () => {
     tick();
     fixture.detectChanges()
     let content = (fixture.debugElement.nativeElement as HTMLElement).textContent
-    console.log(content)
     expect(content?.indexOf('Page 1')).toBeGreaterThan(0)
     
   }))
@@ -74,18 +72,21 @@ describe('AppComponent', () => {
     tick();
     fixture.detectChanges()
     let content = (fixture.debugElement.nativeElement as HTMLElement).textContent
-    console.log(content)
     expect(content?.indexOf('Page 2')).toBeGreaterThan(0)
   }))
 
   it('should not change the page number if its on the last page and the next page button is clicked', fakeAsync(() => {
     const compiled = fixture.debugElement.nativeElement as HTMLElement;
-    
+    let pages = app.stories.length;
+
     // click next button twice
     let nextButton = compiled.querySelectorAll('button')[1]
-    nextButton?.click();
-    tick();
-    fixture.detectChanges()
+    for (let i = 0; i < pages + 2; i++) {
+      nextButton?.click();
+      tick();
+      fixture.detectChanges()
+      console.log((fixture.debugElement.nativeElement as HTMLElement).textContent)
+    }
     nextButton?.click();
     tick();
     fixture.detectChanges()
@@ -98,6 +99,6 @@ describe('AppComponent', () => {
 
     let content = (fixture.debugElement.nativeElement as HTMLElement).textContent
     console.log(content)
-    expect(content?.indexOf('Page 1')).toBeGreaterThan(0)
+    expect(content?.indexOf(`Page ${pages - 1}`)).toBeGreaterThan(0)
   }))
 });
