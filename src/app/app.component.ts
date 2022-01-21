@@ -8,10 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'storyboard';
 
-  stories = [{content: 'This is the beginning of the story', page: 1},
-             {content: 'What happens next is up to you ', page: 2},
-            {content: 'Sometimes you have options', page: 3},
-          {content: 'Sometimes you don\'t'}]
+  stories = [{content: 'The Unveiling of Jesus: Revelation'},
+             {content: 'The Lamb Is the Alpha and the Omega: Assurance'},
+            {content: 'The Lamb is the Lion: Redemption'},
+          {content: 'The Lamb is the Shepherd: Provision'},
+          {content: 'The Lamb is the Victor: Celebration'},
+          {content: 'The Lamb is the Bridegroom: Faithfulness'},
+          {content: 'The Lamb is the Beginning and the End: Restoration'}]
+          //I don't think we're studying what we have well enough 
 
   currentPage = 1
 
