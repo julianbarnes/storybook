@@ -7,10 +7,12 @@
       <p>{{stories[currentPage - 1].content}}</p>
     <p>Page {{currentPage}}</p>
     </div>
-    
     <button id="nextButton" class="col-1" (click)="onNext()">
       Next Page
     </button>
-  </div>  
+  </div>
+  <div class="row">
+    <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+  </div>
 </div>
 
